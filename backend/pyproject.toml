@@ -7,7 +7,7 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
-    "azure-ai-documentintelligence==1.0.0b4",
+    "azure-ai-documentintelligence==1.0.2",
     "openai>=3.42.0",
     "pydantic>=2.14.2",
     "pydantic-settings>=2.16.2",
@@ -20,4 +20,5 @@ package = false
 [dependency-groups]
 dev = [
     "ipykernel>=7.4.0",
+    "ruff>=0.17.3",
 ]

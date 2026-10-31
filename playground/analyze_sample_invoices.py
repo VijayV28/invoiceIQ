@@ -2,7 +2,7 @@
 
 Run from this folder:
 
-    uv run --project ../backend --locked --no-sync python analyze_sample_invoice.py
+    uv run --project ../backend --locked --no-sync python analyze_sample_invoices.py
 """
 
 from __future__ import annotations
@@ -11,8 +11,11 @@ import json
 import sys
 from pathlib import Path
 
-sys.path.append(str((REPO_ROOT := Path(__file__).resolve().parents[1]) / "backend"))
+REPO_ROOT = Path(__file__).resolve().parents[1]
+BACKEND_ROOT = REPO_ROOT / "backend"
 SAMPLE_INVOICE = REPO_ROOT / "samples" / "sample-invoice.pdf"
+
+sys.path.insert(0, str(BACKEND_ROOT))
 
 from app.services.document_intelligence_service import (
     DocumentIntelligenceService,
